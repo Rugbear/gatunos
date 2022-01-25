@@ -149,29 +149,35 @@ var Fn = {
 }
 
 
-var letras = /^[a-z]/;
             
+$().ready(function() {
+    $.validator.addMethod("formAlpha", function (value, element) {
+      var pattern = /^[a-z]/;
+      return this.optional(element) || pattern.test(value);
+    }, "El campo debe tener un valor alfanumérico (azAZ09)");
+  
+    $.validator.addMethod("formEmail", function (value, element) {
+       var pattern = /^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+\.([a-zA-Z])+([a-zA-Z])+/;
+       return this.optional(element) || pattern.test(value);
+    }, "Formato del email incorrecto");
 
-            $('#validar').on('click', function(event) {
-                event.preventDefault();
-                
-                $("#mi-formulario").valid();
-                    var rut = $("#Rut").val();
-                    var email = $("#email").val();
-                    var nombre = $("#name").val(); 
-
-                    if (Fn.validaRut( $("#Rut").val() )){
-		            $("#msgerror").html("");
-	                } else {
-		            $("#msgerror").html("El Rut no es válido");
-	                }
-                    if(nombre == "" || !letras.test(nombre) ){
-                        $("#msgerrorname").html("Nombre no Valido");
-                    }
-                    
-                        
-                    // Se ejecutara siempre y cuando pase las validaciones
-                    $("#mi-formulario").submit();
-                    alert("Estimado "+nombre , "Registro Guardado");
-
-            });
+    $.validator.addMethod("forRut", function (value, element) {
+        var pattern = /^[a-z]/;
+        return this.optional(element) || (Fn.validaRut(element));
+      }, "Rut no Valido");
+  
+    $("#mi-formulario").validate({
+      rules: {
+        nombre: { required: true, minlength: 2, formAlpha: true},
+        email: { required:true, formEmail: true},
+        telefono: { requiered: true},
+        rut: { required:true, minlength: 10, formRut: true},
+      },
+      messages: {
+        name    : "El campo es obligatorio.",
+        email   : "Ingrese un correo valido",
+        rut     : "Rut Invalido",
+        telefono: "Ingrse un Telefono Valido",
+      }
+    });
+  });

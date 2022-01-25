@@ -12,13 +12,16 @@
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
+        
         <link href="css/styles.css" rel="stylesheet" />
+        <link rel="stylesheet" href="css/flickity-docs.css" media="screen">
+        
     </head>
     <body id="page-top" onload="cargar_region()">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand" href="#page-top"> <img src="/assets/img/gatunos.png"  width="300" height="50"></a>
+                <a class="navbar-brand" href="#page-top"> <img src="/assets/img/gatunos.png" alt=""  width="300" height="50"></a>
                 <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars"></i>
@@ -33,15 +36,37 @@
         </nav>
         <!-- Masthead-->
         <header class="masthead bg-primary text-white text-center">
-            <div class="container d-flex align-items-center flex-column">
-                <div class="divider-custom divider-light">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-cat"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                <!-- Masthead Subheading-->
-                <p class="masthead-subheading font-weight-light mb-0">Graphic Artist - Web Designer - Illustrator</p>
-            </div>
+            
+
+                <div class="hero-carousel" data-flickity="" data-js="hero-carousel">
+                    <div class="hero-carousel__cell hero-carousel__cell--1">
+                      <div class="hero-carousel__cell__content">
+                        <p class="tagline" >Nuestros Adoptados</p><br>
+                      </div>
+                    </div>
+                    <div class="hero-carousel__cell hero-carousel__cell--2">
+                      <div class="hero-carousel__cell__content">
+                        <p class="tagline"><b>"Adoro a la Michi"</b><br> Mejor desicion</p> <br>
+                      </div>
+                    </div>
+                    <div class="hero-carousel__cell hero-carousel__cell--3">
+                      <div class="hero-carousel__cell__content">
+                        <ul class="feature-list tagline">
+                          <li>Canela</li>
+                          <li class="hidden-small"><b>"Me salvo la vida"</b></li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="hero-carousel__cell hero-carousel__cell--4">
+                      <div class="hero-carousel__cell__content tagline">
+                        <p>El <b>Negrito</b></p>
+                        <p>Me lleno de alegria</p>
+                      </div>
+                    </div>
+                  </div>
+
+
+         
         </header>
         <!-- Portfolio Section-->
         <section class="page-section portfolio" id="portfolio">
@@ -132,7 +157,7 @@
                         <form id="mi-formulario" name="mi-formulario" >
                             
                             <br><label class="form-label">E-mail</label>
-                            <input type="email" class="form-control" id="correo" name="correo" maxlength="50" requiered placeholder="correo@dominio.cl" >
+                            <input type="email" requiered class="form-control" id="correo" name="correo" maxlength="50" placeholder="correo@dominio.cl" >
                             <br>
                             <label class="form-label">Rut</label>
                             <input type="text" class="form-control"  id="rut" name="rut" minlength="10"  placeholder="11111111-1" requiered>
@@ -159,10 +184,10 @@
 
                         <br><label class="form-label">Tipo de Vivienda</label>
                         <select id="tvivienda" class="form-select">
-                          <option vale="bigby">Casa con patio grande</option>
-                          <option vale="smallby">Casa con patio pequeño</option>
-                          <option vale="noby">Casa sin patio</option>
-                          <option vale="depto">Departamento</option>
+                          <option value="bigby">Casa con patio grande</option>
+                          <option value="smallby">Casa con patio pequeño</option>
+                          <option value="noby">Casa sin patio</option>
+                          <option value="depto">Departamento</option>
 
                         </select>
 
@@ -374,8 +399,11 @@
         </div>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         <!-- Core theme JS-->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
         <script src="js/scripts.js"></script>
-        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+        <script src="js/flickity-docs.min.js?2"></script>
     </body>
 </html>
