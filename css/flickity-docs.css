@@ -1897,14 +1897,8 @@ code .flickity { text-decoration: underline; }
 }
 
 /* hero-carousel
-------------------------- */
-
-.hero-carousel {
-  margin-bottom: 80px;
-  background: #FAFAFA url('https://i.imgur.com/R60qKwS.jpg');
-  background-size: cover;
-}
-
+------------------------- 
+*/
 .hero-carousel__cell {
   width: 100%;
   height: 240px;
@@ -1947,7 +1941,7 @@ code .flickity { text-decoration: underline; }
 }
 
 .hero-carousel__cell--2 {
-  background: #8C8;
+  background: rgb(0, 195, 255);
   background-image: url('/assets/img/rescue/rscue2.jpg') ;
   background-repeat: no-repeat;
   background-size: 50%;
@@ -2009,11 +2003,19 @@ code .flickity { text-decoration: underline; }
 }
 
 @media screen and ( max-width: 500px ) {
-  /* hide first cell content on small devices */
+  /* Ocultamos los textos en dispositivos pequeños */
   .hero-carousel h1,
   .hero-carousel .tagline,
   .hero-carousel .gh-button {
     display: none;
+  }
+
+  /* Dejamos solamente las imagenes en dispositivos pequeños */
+  .hero-carousel__cell,
+  .hero-carousel__cell--2,
+  .hero-carousel__cell--3 ,
+  .hero-carousel__cell--4{
+    background-size: 100%;
   }
 
 }
@@ -2028,6 +2030,7 @@ code .flickity { text-decoration: underline; }
     right: 60px;
     top: 20px;
   }
+  
 }
 
 /* ---- large device styles ---- */
@@ -2081,7 +2084,9 @@ code .flickity { text-decoration: underline; }
     padding-top: 40px;
     margin-bottom: 20px;
   }
+  
 
+  
 }
 
 @media screen and ( min-width: 960px ) {
@@ -2102,6 +2107,7 @@ code .flickity { text-decoration: underline; }
     max-width: 400px;
     top: 20px
   }
+  
 
 }
 
@@ -2177,6 +2183,8 @@ code .flickity { text-decoration: underline; }
   .page-nav.is-fixed {
     position: fixed;
   }
+
+
 
 }
 
@@ -2338,6 +2346,7 @@ code .flickity { text-decoration: underline; }
   .site-nav__item--homepage {
     font-size: 26px;
   }
+
 
 }
 
